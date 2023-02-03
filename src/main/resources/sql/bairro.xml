@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>SQL Tabela Bairros</comment>
+
+	<entry key="sql.update.bairro">
+		UPDATE BAIRROS SET
+			BAIRRO = ?
+		WHERE
+			IDBAIRRO = ?
+	</entry>
+
+	<entry key="sql.delete.bairro">
+		DELETE FROM
+			BAIRROS
+		WHERE
+			IDBAIRRO = ?
+	</entry>
+
+	<entry key="sql.select.bairro">
+		SELECT * FROM BAIRROS
+	</entry>
+
+	<entry key="sql.select.cod.bairro">
+		SELECT * FROM BAIRROS WHERE IDBAIRRO = ?
+	</entry>
+
+	<entry key="sql.select.name.bairro">
+		SELECT * FROM BAIRROS WHERE BAIRRO LIKE ?
+	</entry>
+
+</properties>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>SQL Tabela Cidades</comment>
+
+	<entry key="sql.update.cidade">
+		UPDATE CIDADES SET
+			CIDADE = ?
+		WHERE
+			IDCIDADE = ?
+	</entry>
+
+	<entry key="sql.delete.cidade">
+		DELETE FROM
+			CIDADES
+		WHERE
+			IDCIDADE = ?
+	</entry>
+
+	<entry key="sql.select.cidade">
+		SELECT * FROM CIDADES
+	</entry>
+
+	<entry key="sql.select.cod.cidade">
+		SELECT * FROM CIDADES WHERE IDCIDADE = ?
+	</entry>
+
+	<entry key="sql.select.name.cidade">
+		SELECT * FROM CIDADES WHERE CIDADE LIKE ?
+	</entry>
+
+</properties>

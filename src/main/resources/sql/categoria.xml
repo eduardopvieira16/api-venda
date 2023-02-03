@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>SQL Tabela Categoria</comment>
+
+	<entry key="sql.update.categoria">
+		UPDATE CATEGORIAS SET
+			CATEGORIA = ?
+		WHERE
+			IDCATEGORIA = ?
+	</entry>
+
+	<entry key="sql.delete.categoria">
+		DELETE FROM
+			CATEGORIAS
+		WHERE
+			IDCATEGORIA = ?
+	</entry>
+
+	<entry key="sql.select.categoria">
+		SELECT * FROM CATEGORIAS
+	</entry>
+
+	<entry key="sql.select.cod.categoria">
+		SELECT * FROM CATEGORIAS WHERE IDCATEGORIA = ?
+	</entry>
+
+	<entry key="sql.select.name.categoria">
+		SELECT * FROM CATEGORIAS WHERE CATEGORIA LIKE ?
+	</entry>
+
+</properties>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>SQL Tabela Unidades</comment>
+
+	<entry key="sql.update.unidade">
+		UPDATE UNIDADES SET
+			UNIDADE = ?, ABREVIACAO = ?
+		WHERE
+			IDUNIDADE = ?
+	</entry>
+
+	<entry key="sql.delete.unidade">
+		DELETE FROM
+			UNIDADES
+		WHERE
+			IDUNIDADE = ?
+	</entry>
+
+	<entry key="sql.select.unidade">
+		SELECT * FROM UNIDADES
+	</entry>
+
+	<entry key="sql.select.cod.unidade">
+		SELECT * FROM UNIDADES WHERE IDUNIDADE = ?
+	</entry>
+
+	<entry key="sql.select.name.unidade">
+		SELECT * FROM UNIDADES WHERE UNIDADE LIKE ?
+	</entry>
+
+</properties>

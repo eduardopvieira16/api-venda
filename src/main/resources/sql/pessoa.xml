@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>SQL Tabela Pessoas</comment>
+
+	<entry key="sql.update.pessoa">
+		UPDATE PESSOAS SET
+			PRIMEIRONOME = ?, SEGUNDONOME = ?, CPF = ?, EMAIL = ?
+		WHERE
+			IDPESSOA = ?
+	</entry>
+
+	<entry key="sql.delete.pessoa">
+		DELETE FROM
+			PESSOAS
+		WHERE
+			IDPESSOA = ?
+	</entry>
+
+	<entry key="sql.select.pessoa">
+		SELECT P.IDPESSOA,
+		  P.PRIMEIRONOME,
+		  P.SEGUNDONOME,
+		  P.CPF,
+		  P.EMAIL,
+		  E.CEP,
+		  E.ENDERECO,
+		  P.NUMERO,
+		  P.COMPLEMENTO,
+		  C.CIDADE,
+		  B.BAIRRO,
+		  UF.ESTADO
+		FROM PESSOAS P
+		  INNER JOIN ENDERECOS E ON P.IDENDERECO_PK = E.IDENDERECO
+		  INNER JOIN CIDADES C ON E.IDCIDADE_PK = C.IDCIDADE
+		  INNER JOIN BAIRROS B ON E.IDCIDADE_PK = B.IDBAIRRO
+		  INNER JOIN ESTADOS UF ON E.IDCIDADE_PK = UF.IDESTADO;
+	</entry>
+
+	<entry key="sql.select.cod.pessoa">
+		SELECT P.IDPESSOA,
+		  P.PRIMEIRONOME,
+		  P.SEGUNDONOME,
+		  P.CPF,
+		  P.EMAIL,
+		  E.CEP,
+		  E.ENDERECO,
+		  P.NUMERO,
+		  P.COMPLEMENTO,
+		  C.CIDADE,
+		  B.BAIRRO,
+		  UF.ESTADO
+		FROM PESSOAS P
+		  INNER JOIN ENDERECOS E ON P.IDENDERECO_PK = E.IDENDERECO
+		  INNER JOIN CIDADES C ON E.IDCIDADE_PK = C.IDCIDADE
+		  INNER JOIN BAIRROS B ON E.IDCIDADE_PK = B.IDBAIRRO
+		  INNER JOIN ESTADOS UF ON E.IDCIDADE_PK = UF.IDESTADO
+		WHERE IDPESSOA = ?
+	</entry>
+
+	<entry key="sql.select.name.pessoa">
+		SELECT P.IDPESSOA,
+		  P.PRIMEIRONOME,
+		  P.SEGUNDONOME,
+		  P.CPF,
+		  P.EMAIL,
+		  E.CEP,
+		  E.ENDERECO,
+		  P.NUMERO,
+		  P.COMPLEMENTO,
+		  C.CIDADE,
+		  B.BAIRRO,
+		  UF.ESTADO
+		FROM PESSOAS P
+		  INNER JOIN ENDERECOS E ON P.IDENDERECO_PK = E.IDENDERECO
+		  INNER JOIN CIDADES C ON E.IDCIDADE_PK = C.IDCIDADE
+		  INNER JOIN BAIRROS B ON E.IDCIDADE_PK = B.IDBAIRRO
+		  INNER JOIN ESTADOS UF ON E.IDCIDADE_PK = UF.IDESTADO
+		WHERE PRIMEIRONOME LIKE ?
+	</entry>
+
+</properties>

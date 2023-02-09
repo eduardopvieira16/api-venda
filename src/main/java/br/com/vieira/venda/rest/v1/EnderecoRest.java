@@ -26,32 +26,62 @@ public class EnderecoRest {
 
 	@PostMapping("/new")
 	public Endereco inserir(@RequestBody Endereco endereco) throws Exception {
-		return enderecoService.adicionarEndereco(endereco);
+		try {
+			return enderecoService.adicionarEndereco(endereco);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
 	}
 
 	@DeleteMapping("/remove/{cod}")
 	public Number deletar(@PathVariable("cod") Long cod) throws Exception {
-		return enderecoService.deletarEndereco(cod);
+		try {
+			return enderecoService.deletarEndereco(cod);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
 	}
 
 	@PutMapping("/edit/{cod}")
 	public Number editar(@RequestBody Endereco endereco, @PathVariable("cod") Long cod) throws Exception {
-		return enderecoService.editarEndereco(endereco);
+		try {
+			return enderecoService.editarEndereco(endereco);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
 	}
 
 	@GetMapping("/all")
 	public List<Endereco> listarTudo() throws Exception {
-		return enderecoService.listarTodos();
+		try {
+			return enderecoService.listarTodos();
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
 	}
 
 	@GetMapping("/cod/{cod}")
 	public Endereco listarPorCod(@PathVariable("cod") Long cod) throws Exception {
-		return enderecoService.buscarPorCod(cod);
+		try {
+			return enderecoService.buscarPorCod(cod);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
 	}
 
 	@GetMapping("/name/{Endereco}")
 	public List<Endereco> listarPorEndereco(@PathVariable("Endereco") String endereco) throws Exception {
-		return enderecoService.listarPorEndereco(endereco);
+		try {
+			return enderecoService.listarPorEndereco(endereco);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
 	}
 
 }

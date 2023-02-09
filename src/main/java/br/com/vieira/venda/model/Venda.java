@@ -10,20 +10,24 @@ public class Venda {
 	private String formaPagamento;
 	private Float pagamento;
 	private Date dataPagamento;
+	private Float troco;
 	private Pessoa pessoa;
 	private Produto produto;
 
 	public Venda() {
+
 	}
 
 	public Venda(Long id, Float precoTotal, Float desconto, String formaPagamento, Float pagamento, Date dataPagamento,
-			Pessoa pessoa, Produto produto) {
+			Float troco, Pessoa pessoa, Produto produto) {
+		super();
 		this.id = id;
 		this.precoTotal = precoTotal;
 		this.desconto = desconto;
 		this.formaPagamento = formaPagamento;
 		this.pagamento = pagamento;
 		this.dataPagamento = dataPagamento;
+		this.troco = troco;
 		this.pessoa = pessoa;
 		this.produto = produto;
 	}
@@ -76,6 +80,14 @@ public class Venda {
 		this.dataPagamento = dataPagamento;
 	}
 
+	public Float getTroco() {
+		return troco;
+	}
+
+	public void setTroco(Float troco) {
+		this.troco = troco;
+	}
+
 	public Pessoa getPessoa() {
 		return pessoa;
 	}
@@ -95,7 +107,7 @@ public class Venda {
 	@Override
 	public String toString() {
 		return "Venda [id=" + id + ", precoTotal=" + precoTotal + ", desconto=" + desconto + ", formaPagamento="
-				+ formaPagamento + ", pagamento=" + pagamento + ", dataPagamento=" + dataPagamento + ", pessoa="
-				+ pessoa + ", produto=" + produto + "]";
+				+ formaPagamento + ", pagamento=" + pagamento + ", dataPagamento=" + dataPagamento + ", troco=" + troco
+				+ ", pessoa=" + pessoa + ", produto=" + produto + "]";
 	}
 }

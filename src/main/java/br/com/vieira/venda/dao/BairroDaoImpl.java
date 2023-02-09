@@ -20,9 +20,6 @@ public class BairroDaoImpl implements BairroDao {
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
 
-	/*
-	 * @Value("${sql.insert.bairro}") private String SQL_INSERT_BAIRRO;
-	 */
 	@Value("${sql.update.bairro}")
 	private String SQL_UPDATE_BAIRRO;
 	@Value("${sql.delete.bairro}")

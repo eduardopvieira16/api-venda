@@ -26,32 +26,61 @@ public class CidadeRest {
 
 	@PostMapping("/new")
 	public Cidade inserir(@RequestBody Cidade cidade) throws Exception {
-		return cidadeService.adicionarCidade(cidade);
+		try {
+			return cidadeService.adicionarCidade(cidade);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
 	}
 
 	@DeleteMapping("/remove/{cod}")
 	public Number deletar(@PathVariable("cod") Long cod) throws Exception {
-		return cidadeService.deletarCidade(cod);
+		try {
+			return cidadeService.deletarCidade(cod);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
 	}
 
 	@PutMapping("/edit/{cod}")
-	public Number editar(@RequestBody Cidade cidade, @PathVariable("cod") Long cod) throws Exception {
-		return cidadeService.editarCidade(cidade);
+	public Number editar(@RequestBody Cidade Cidade, @PathVariable("cod") Long cod) throws Exception {
+		try {
+			return cidadeService.editarCidade(Cidade);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
 	}
 
 	@GetMapping("/all")
 	public List<Cidade> listarTudo() throws Exception {
-		return cidadeService.listarTodos();
+		try {
+			return cidadeService.listarTodos();
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
 	}
 
 	@GetMapping("/cod/{cod}")
 	public Cidade listarPorCod(@PathVariable("cod") Long cod) throws Exception {
-		return cidadeService.buscarPorCod(cod);
+		try {
+			return cidadeService.buscarPorCod(cod);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
 	}
 
-	@GetMapping("/name/{cidade}")
-	public List<Cidade> listarPorcidade(@PathVariable("cidade") String cidade) throws Exception {
-		return cidadeService.listarPorCidade(cidade);
+	@GetMapping("/name/{Cidade}")
+	public List<Cidade> listarPorCidade(@PathVariable("Cidade") String Cidade) throws Exception {
+		try {
+			return cidadeService.listarPorCidade(Cidade);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
 	}
-
 }

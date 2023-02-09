@@ -20,9 +20,6 @@ public class EnderecoDaoImpl implements EnderecoDao {
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
 
-	/*
-	 * @Value("${sql.insert.endereco}") private String SQL_INSERT_ENDERECO;
-	 */
 	@Value("${sql.update.endereco}")
 	private String SQL_UPDATE_ENDERECO;
 	@Value("${sql.delete.endereco}")

@@ -26,32 +26,62 @@ public class PessoaRest {
 
 	@PostMapping("/new")
 	public Pessoa inserir(@RequestBody Pessoa pessoa) throws Exception {
-		return pessoaService.adicionarPessoa(pessoa);
+		try {
+			return pessoaService.adicionarPessoa(pessoa);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
 	}
 
 	@DeleteMapping("/remove/{cod}")
 	public Number deletar(@PathVariable("cod") Long cod) throws Exception {
-		return pessoaService.deletarPessoa(cod);
+		try {
+			return pessoaService.deletarPessoa(cod);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
 	}
 
 	@PutMapping("/edit/{cod}")
 	public Number editar(@RequestBody Pessoa pessoa, @PathVariable("cod") Long cod) throws Exception {
-		return pessoaService.editarPessoa(pessoa);
+		try {
+			return pessoaService.editarPessoa(pessoa);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
 	}
 
 	@GetMapping("/all")
 	public List<Pessoa> listarTudo() throws Exception {
-		return pessoaService.listarTodos();
+		try {
+			return pessoaService.listarTodos();
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
 	}
 
 	@GetMapping("/cod/{cod}")
 	public Pessoa listarPorCod(@PathVariable("cod") Long cod) throws Exception {
-		return pessoaService.buscarPorCod(cod);
+		try {
+			return pessoaService.buscarPorCod(cod);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
 	}
 
 	@GetMapping("/name/{Pessoa}")
 	public List<Pessoa> listarPorPessoa(@PathVariable("Pessoa") String pessoa) throws Exception {
-		return pessoaService.listarPorPessoa(pessoa);
+		try {
+			return pessoaService.listarPorPessoa(pessoa);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
 	}
 
 }

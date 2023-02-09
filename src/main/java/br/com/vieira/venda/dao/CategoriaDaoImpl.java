@@ -20,9 +20,6 @@ public class CategoriaDaoImpl implements CategoriaDao {
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
 
-	/*
-	 * @Value("${sql.insert.categoria}") private String SQL_INSERT_CATEGORIA;
-	 */
 	@Value("${sql.update.categoria}")
 	private String SQL_UPDATE_CATEGORIA;
 	@Value("${sql.delete.categoria}")

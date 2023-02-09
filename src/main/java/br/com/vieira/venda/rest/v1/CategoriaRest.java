@@ -26,32 +26,61 @@ public class CategoriaRest {
 
 	@PostMapping("/new")
 	public Categoria inserir(@RequestBody Categoria categoria) throws Exception {
-		return categoriaService.adicionarCategoria(categoria);
+		try {
+			return categoriaService.adicionarCategoria(categoria);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
 	}
 
 	@DeleteMapping("/remove/{cod}")
 	public Number deletar(@PathVariable("cod") Long cod) throws Exception {
-		return categoriaService.deletarCategoria(cod);
+		try {
+			return categoriaService.deletarCategoria(cod);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
 	}
 
 	@PutMapping("/edit/{cod}")
 	public Number editar(@RequestBody Categoria categoria, @PathVariable("cod") Long cod) throws Exception {
-		return categoriaService.editarCategoria(categoria);
+		try {
+			return categoriaService.editarCategoria(categoria);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
 	}
 
 	@GetMapping("/all")
 	public List<Categoria> listarTudo() throws Exception {
-		return categoriaService.listarTodos();
+		try {
+			return categoriaService.listarTodos();
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
 	}
 
 	@GetMapping("/cod/{cod}")
 	public Categoria listarPorCod(@PathVariable("cod") Long cod) throws Exception {
-		return categoriaService.buscarPorCod(cod);
+		try {
+			return categoriaService.buscarPorCod(cod);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
 	}
 
 	@GetMapping("/name/{Categoria}")
 	public List<Categoria> listarPorCategoria(@PathVariable("categoria") String categoria) throws Exception {
-		return categoriaService.listarPorCategoria(categoria);
+		try {
+			return categoriaService.listarPorCategoria(categoria);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
 	}
-
 }

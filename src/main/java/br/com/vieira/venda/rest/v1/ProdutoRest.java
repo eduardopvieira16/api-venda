@@ -13,21 +13,21 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.vieira.venda.model.Estado;
-import br.com.vieira.venda.service.EstadoServiceImpl;
+import br.com.vieira.venda.model.Produto;
+import br.com.vieira.venda.service.ProdutoServiceImpl;
 
 @CrossOrigin(origins = "*")
 @RestController
-@RequestMapping("api/v1/estado")
-public class EstadoRest {
+@RequestMapping("api/v1/produto")
+public class ProdutoRest {
 
 	@Autowired
-	private EstadoServiceImpl estadoService;
+	private ProdutoServiceImpl produtoService;
 
 	@PostMapping("/new")
-	public Estado inserir(@RequestBody Estado estado) throws Exception {
+	public Produto inserir(@RequestBody Produto produto) throws Exception {
 		try {
-			return estadoService.adicionarEstado(estado);
+			return produtoService.adicionarProduto(produto);
 		} catch (Exception e) {
 			e.printStackTrace();
 			return null;
@@ -37,7 +37,7 @@ public class EstadoRest {
 	@DeleteMapping("/remove/{cod}")
 	public Number deletar(@PathVariable("cod") Long cod) throws Exception {
 		try {
-			return estadoService.deletarEstado(cod);
+			return produtoService.deletarProduto(cod);
 		} catch (Exception e) {
 			e.printStackTrace();
 			return null;
@@ -45,9 +45,9 @@ public class EstadoRest {
 	}
 
 	@PutMapping("/edit/{cod}")
-	public Number editar(@RequestBody Estado estado, @PathVariable("cod") Long cod) throws Exception {
+	public Number editar(@RequestBody Produto produto, @PathVariable("cod") Long cod) throws Exception {
 		try {
-			return estadoService.editarEstado(estado);
+			return produtoService.editarProduto(produto);
 		} catch (Exception e) {
 			e.printStackTrace();
 			return null;
@@ -55,9 +55,9 @@ public class EstadoRest {
 	}
 
 	@GetMapping("/all")
-	public List<Estado> listarTudo() throws Exception {
+	public List<Produto> listarTudo() throws Exception {
 		try {
-			return estadoService.listarTodos();
+			return produtoService.listarTodos();
 		} catch (Exception e) {
 			e.printStackTrace();
 			return null;
@@ -65,19 +65,19 @@ public class EstadoRest {
 	}
 
 	@GetMapping("/cod/{cod}")
-	public Estado listarPorCod(@PathVariable("cod") Long cod) throws Exception {
+	public Produto listarPorCod(@PathVariable("cod") Long cod) throws Exception {
 		try {
-			return estadoService.buscarPorCod(cod);
+			return produtoService.buscarPorCod(cod);
 		} catch (Exception e) {
 			e.printStackTrace();
 			return null;
 		}
 	}
 
-	@GetMapping("/name/{estado}")
-	public List<Estado> listarPorEstado(@PathVariable("estado") String estado) throws Exception {
+	@GetMapping("/name/{produto}")
+	public List<Produto> listarPorProduto(@PathVariable("produto") String produto) throws Exception {
 		try {
-			return estadoService.listarPorEstado(estado);
+			return produtoService.listarPorProduto(produto);
 		} catch (Exception e) {
 			e.printStackTrace();
 			return null;

@@ -26,32 +26,61 @@ public class BairroRest {
 
 	@PostMapping("/new")
 	public Bairro inserir(@RequestBody Bairro bairro) throws Exception {
-		return bairroService.adicionarBairro(bairro);
+		try {
+			return bairroService.adicionarBairro(bairro);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
 	}
 
 	@DeleteMapping("/remove/{cod}")
 	public Number deletar(@PathVariable("cod") Long cod) throws Exception {
-		return bairroService.deletarBairro(cod);
+		try {
+			return bairroService.deletarBairro(cod);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
 	}
 
 	@PutMapping("/edit/{cod}")
 	public Number editar(@RequestBody Bairro bairro, @PathVariable("cod") Long cod) throws Exception {
-		return bairroService.editarBairro(bairro);
+		try {
+			return bairroService.editarBairro(bairro);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
 	}
 
 	@GetMapping("/all")
 	public List<Bairro> listarTudo() throws Exception {
-		return bairroService.listarTodos();
+		try {
+			return bairroService.listarTodos();
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
 	}
 
 	@GetMapping("/cod/{cod}")
 	public Bairro listarPorCod(@PathVariable("cod") Long cod) throws Exception {
-		return bairroService.buscarPorCod(cod);
+		try {
+			return bairroService.buscarPorCod(cod);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
 	}
 
 	@GetMapping("/name/{bairro}")
 	public List<Bairro> listarPorBairro(@PathVariable("bairro") String bairro) throws Exception {
-		return bairroService.listarPorBairro(bairro);
+		try {
+			return bairroService.listarPorBairro(bairro);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
 	}
-
 }

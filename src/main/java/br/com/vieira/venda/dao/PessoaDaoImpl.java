@@ -20,9 +20,6 @@ public class PessoaDaoImpl implements PessoaDao {
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
 
-	/*
-	 * @Value("${sql.insert.pessoa}") private String SQL_INSERT_PESSOA;
-	 */
 	@Value("${sql.update.pessoa}")
 	private String SQL_UPDATE_PESSOA;
 	@Value("${sql.delete.pessoa}")

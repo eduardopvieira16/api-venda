@@ -26,32 +26,62 @@ public class UnidadeRest {
 
 	@PostMapping("/new")
 	public Unidade inserir(@RequestBody Unidade unidade) throws Exception {
-		return unidadeService.adicionarUnidade(unidade);
+		try {
+			return unidadeService.adicionarUnidade(unidade);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
 	}
 
 	@DeleteMapping("/remove/{cod}")
 	public Number deletar(@PathVariable("cod") Long cod) throws Exception {
-		return unidadeService.deletarUnidade(cod);
+		try {
+			return unidadeService.deletarUnidade(cod);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
 	}
 
 	@PutMapping("/edit/{cod}")
 	public Number editar(@RequestBody Unidade unidade, @PathVariable("cod") Long cod) throws Exception {
-		return unidadeService.editarUnidade(unidade);
+		try {
+			return unidadeService.editarUnidade(unidade);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
 	}
 
 	@GetMapping("/all")
 	public List<Unidade> listarTudo() throws Exception {
-		return unidadeService.listarTodos();
+		try {
+			return unidadeService.listarTodos();
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
 	}
 
 	@GetMapping("/cod/{cod}")
 	public Unidade listarPorCod(@PathVariable("cod") Long cod) throws Exception {
-		return unidadeService.buscarPorCod(cod);
+		try {
+			return unidadeService.buscarPorCod(cod);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
 	}
 
 	@GetMapping("/name/{Unidade}")
 	public List<Unidade> listarPorUnidade(@PathVariable("unidade") String unidade) throws Exception {
-		return unidadeService.listarPorUnidade(unidade);
+		try {
+			return unidadeService.listarPorUnidade(unidade);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
 	}
 
 }

@@ -1,32 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
 <properties>
-	<comment>SQL Tabela Bairros</comment>
+	<comment>SQL Tabela Vendas</comment>
 
-	<entry key="sql.update.bairro">
-		UPDATE BAIRROS SET
-			BAIRRO = ?
-		WHERE
-			IDBAIRRO = ?
+	<entry key="sql.update.venda">
+		
 	</entry>
 
-	<entry key="sql.delete.bairro">
+	<entry key="sql.delete.venda">
 		DELETE FROM
-			BAIRROS
+			VENDAS
 		WHERE
-			IDBAIRRO = ?
+			IDVENDA = ?
 	</entry>
 
-	<entry key="sql.select.bairro">
-		SELECT * FROM BAIRROS
+	<entry key="sql.select.venda">
+		
 	</entry>
 
-	<entry key="sql.select.cod.bairro">
-		SELECT * FROM BAIRROS WHERE IDBAIRRO = ?
+	<entry key="sql.select.cod.venda">
+		
 	</entry>
 
-	<entry key="sql.select.name.bairro">
-		SELECT * FROM BAIRROS WHERE BAIRRO LIKE ?
+	<entry key="sql.select.name.venda">
+		
 	</entry>
 
 </properties>

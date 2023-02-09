@@ -20,9 +20,6 @@ public class UnidadeDaoImpl implements UnidadeDao {
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
 
-	/*
-	 * @Value("${sql.insert.unidade}") private String SQL_INSERT_UNIDADE;
-	 */
 	@Value("${sql.update.unidade}")
 	private String SQL_UPDATE_UNIDADE;
 	@Value("${sql.delete.unidade}")

@@ -20,9 +20,6 @@ public class EstadoDaoImpl implements EstadoDao {
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
 
-	/*
-	 * @Value("${sql.insert.estado}") private String SQL_INSERT_ESTADO;
-	 */
 	@Value("${sql.update.estado}")
 	private String SQL_UPDATE_ESTADO;
 	@Value("${sql.delete.estado}")

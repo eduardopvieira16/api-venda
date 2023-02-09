@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>SQL Tabela Produtos</comment>
+
+	<entry key="sql.update.produto">
+		
+	</entry>
+
+	<entry key="sql.delete.produto">
+		DELETE FROM
+			PRODUTOS
+		WHERE
+			IDPRODUTO = ?
+	</entry>
+
+	<entry key="sql.select.produto">
+		
+	</entry>
+
+	<entry key="sql.select.cod.produto">
+		
+	</entry>
+
+	<entry key="sql.select.name.produto">
+		
+	</entry>
+
+</properties>

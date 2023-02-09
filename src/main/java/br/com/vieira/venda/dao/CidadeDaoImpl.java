@@ -20,9 +20,6 @@ public class CidadeDaoImpl implements CidadeDao {
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
 
-	/*
-	 * @Value("${sql.insert.cidade}") private String SQL_INSERT_CIDADE;
-	 */
 	@Value("${sql.update.cidade}")
 	private String SQL_UPDATE_CIDADE;
 	@Value("${sql.delete.cidade}")

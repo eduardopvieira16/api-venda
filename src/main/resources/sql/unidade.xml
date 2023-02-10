@@ -22,11 +22,13 @@
 	</entry>
 
 	<entry key="sql.select.cod.unidade">
-		SELECT * FROM UNIDADES WHERE IDUNIDADE = ?
+		SELECT * FROM UNIDADES
+			WHERE IDUNIDADE = ?
 	</entry>
 
 	<entry key="sql.select.name.unidade">
-		SELECT * FROM UNIDADES WHERE UNIDADE LIKE ?
+		SELECT * FROM UNIDADES
+			WHERE UNIDADE LIKE ?
 	</entry>
 
 </properties>

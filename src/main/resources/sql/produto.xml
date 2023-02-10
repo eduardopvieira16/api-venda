@@ -4,7 +4,10 @@
 	<comment>SQL Tabela Produtos</comment>
 
 	<entry key="sql.update.produto">
-		
+		UPDATE PRODUTOS SET 
+			IDUNIDADE_PK = ?, IDCATEGORIA_PK = ?, PRODUTO = ?, DESCRICAO = ?, PRECO_UNITARIO = ?, NCM = ?
+		WHERE
+			IDPRODUTO = ?
 	</entry>
 
 	<entry key="sql.delete.produto">
@@ -15,15 +18,48 @@
 	</entry>
 
 	<entry key="sql.select.produto">
-		
+		SELECT
+			PROD.IDPRODUTO,
+		  	PROD.PRODUTO,
+		  	PROD.DESCRICAO,
+		  	PROD.PRECO_UNITARIO,
+		  	PROD.NCM,
+		  	U.ABREVIACAO,
+		  	C.CATEGORIA
+		FROM PRODUTOS PROD
+		  	INNER JOIN UNIDADES U ON PROD.IDUNIDADE_PK = U.IDUNIDADE
+		  	INNER JOIN CATEGORIAS C ON PROD.IDUNIDADE_PK = C.IDCATEGORIA
 	</entry>
 
 	<entry key="sql.select.cod.produto">
-		
+		SELECT PROD.IDPRODUTO,
+			PROD.PRODUTO,
+			PROD.DESCRICAO,
+			PROD.PRECO_UNITARIO,
+			PROD.NCM,
+			U.ABREVIACAO,
+			C.CATEGORIA
+		FROM PRODUTOS PROD
+			INNER JOIN UNIDADES U ON PROD.IDUNIDADE_PK = U.IDUNIDADE
+		  	INNER JOIN CATEGORIAS C ON PROD.IDUNIDADE_PK = C.IDCATEGORIA
+		WHERE 
+			PROD.IDPRODUTO = ?
 	</entry>
 
 	<entry key="sql.select.name.produto">
-		
+		SELECT
+			PROD.IDPRODUTO,
+		  	PROD.PRODUTO,
+		  	PROD.DESCRICAO,
+		  	PROD.PRECO_UNITARIO,
+		  	PROD.NCM,
+		  	U.ABREVIACAO,
+		  	C.CATEGORIA
+		FROM PRODUTOS PROD
+		  	INNER JOIN UNIDADES U ON PROD.IDUNIDADE_PK = U.IDUNIDADE
+		  	INNER JOIN CATEGORIAS C ON PROD.IDUNIDADE_PK = C.IDCATEGORIA
+		WHERE
+			PROD.PRODUTO = ?
 	</entry>
 
 </properties>

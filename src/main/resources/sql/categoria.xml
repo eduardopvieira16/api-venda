@@ -22,11 +22,13 @@
 	</entry>
 
 	<entry key="sql.select.cod.categoria">
-		SELECT * FROM CATEGORIAS WHERE IDCATEGORIA = ?
+		SELECT * FROM CATEGORIAS
+			WHERE IDCATEGORIA = ?
 	</entry>
 
 	<entry key="sql.select.name.categoria">
-		SELECT * FROM CATEGORIAS WHERE CATEGORIA LIKE ?
+		SELECT * FROM CATEGORIAS
+			WHERE CATEGORIA LIKE ?
 	</entry>
 
 </properties>

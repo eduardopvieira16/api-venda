@@ -22,11 +22,13 @@
 	</entry>
 
 	<entry key="sql.select.cod.bairro">
-		SELECT * FROM BAIRROS WHERE IDBAIRRO = ?
+		SELECT * FROM BAIRROS
+			WHERE IDBAIRRO = ?
 	</entry>
 
 	<entry key="sql.select.name.bairro">
-		SELECT * FROM BAIRROS WHERE BAIRRO LIKE ?
+		SELECT * FROM BAIRROS
+			WHERE BAIRRO LIKE ?
 	</entry>
 
 </properties>

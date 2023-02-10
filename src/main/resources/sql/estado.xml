@@ -22,11 +22,13 @@
 	</entry>
 
 	<entry key="sql.select.cod.estado">
-		SELECT * FROM ESTADOS WHERE IDESTADO = ?
+		SELECT * FROM ESTADOS
+			WHERE IDESTADO = ?
 	</entry>
 
 	<entry key="sql.select.name.estado">
-		SELECT * FROM ESTADOS WHERE ESTADO LIKE ?
+		SELECT * FROM ESTADOS
+			WHERE ESTADO LIKE ?
 	</entry>
 
 </properties>

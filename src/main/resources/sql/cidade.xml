@@ -22,11 +22,13 @@
 	</entry>
 
 	<entry key="sql.select.cod.cidade">
-		SELECT * FROM CIDADES WHERE IDCIDADE = ?
+		SELECT * FROM CIDADES
+			WHERE IDCIDADE = ?
 	</entry>
 
 	<entry key="sql.select.name.cidade">
-		SELECT * FROM CIDADES WHERE CIDADE LIKE ?
+		SELECT * FROM CIDADES
+			WHERE CIDADE LIKE ?
 	</entry>
 
 </properties>

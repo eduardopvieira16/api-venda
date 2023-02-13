@@ -20,10 +20,8 @@ public class VendaMapper implements RowMapper<Venda> {
 		venda.setPagamento(rs.getFloat("PAGAMENTO"));
 		venda.setDataPagamento(rs.getDate("DATAPAGAMENTO"));
 		venda.setTroco(rs.getFloat("TROCO"));
-
-		/*
-		 * PESSOA E PRODUTO - FK
-		 */
+		venda.setPessoa(rs.getLong("IDPESSOA_PK"), rs.getString("PRIMEIRONOME"), rs.getString("SEGUNDONOME"));
+		venda.setProduto(rs.getLong("IDPRODUTO_PK"), rs.getString("PRODUTO"), rs.getFloat("PRECO_UNITARIO"));
 
 		return venda;
 	}

@@ -70,16 +70,24 @@ public class Produto {
 		return unidade;
 	}
 
-	public void setUnidade(Unidade unidade) {
-		this.unidade = unidade;
+	public void setUnidade(Long id, String abreviacao) {
+		Unidade uni = new Unidade();
+		uni.setId(id);
+		uni.setAbreviacao(abreviacao);
+
+		this.unidade = uni;
 	}
 
 	public Categoria getCategoria() {
 		return categoria;
 	}
 
-	public void setCategoria(Categoria categoria) {
-		this.categoria = categoria;
+	public void setCategoria(Long id, String categoria) {
+		Categoria cat = new Categoria();
+		cat.setId(id);
+		cat.setCategoria(categoria);
+
+		this.categoria = cat;
 	}
 
 	@Override

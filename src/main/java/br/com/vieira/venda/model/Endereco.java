@@ -50,24 +50,36 @@ public class Endereco {
 		return cidade;
 	}
 
-	public void setCidade(Cidade cidade) {
-		this.cidade = cidade;
+	public void setCidade(Long id, String cidade) {
+		Cidade cid = new Cidade();
+		cid.setId(id);
+		cid.setCidade(cidade);
+
+		this.cidade = cid;
 	}
 
 	public Estado getEstado() {
 		return estado;
 	}
 
-	public void setEstado(Estado estado) {
-		this.estado = estado;
+	public void setEstado(Long id, String estado) {
+		Estado uf = new Estado();
+		uf.setId(id);
+		uf.setEstado(estado);
+
+		this.estado = uf;
 	}
 
 	public Bairro getBairro() {
 		return bairro;
 	}
 
-	public void setBairro(Bairro bairro) {
-		this.bairro = bairro;
+	public void setBairro(Long id, String bairro) {
+		Bairro bai = new Bairro();
+		bai.setId(id);
+		bai.setBairro(bairro);
+
+		this.bairro = bai;
 	}
 
 	@Override

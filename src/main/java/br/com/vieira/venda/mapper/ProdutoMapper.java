@@ -15,12 +15,11 @@ public class ProdutoMapper implements RowMapper<Produto> {
 
 		produto.setId(rs.getLong("IDPRODUTO"));
 		produto.setProduto(rs.getString("PRODUTO"));
+		produto.setDescricao(rs.getString("DESCRICAO"));
 		produto.setPrecoUnitario(rs.getFloat("PRECO_UNITARIO"));
 		produto.setNcm(rs.getString("NCM"));
-
-		/*
-		 * CATEGORIA E UNIDADE - FK
-		 */
+		produto.setCategoria(rs.getLong("IDCATEGORIA_PK"), rs.getString("CATEGORIA"));
+		produto.setUnidade(rs.getLong("IDCATEGORIA_PK"), rs.getString("ABREVIACAO"));
 
 		return produto;
 	}

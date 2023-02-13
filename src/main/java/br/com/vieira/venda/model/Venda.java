@@ -92,16 +92,26 @@ public class Venda {
 		return pessoa;
 	}
 
-	public void setPessoa(Pessoa pessoa) {
-		this.pessoa = pessoa;
+	public void setPessoa(Long id, String primeiroNome, String segundoNome) {
+		Pessoa pess = new Pessoa();
+		pess.setId(id);
+		pess.setPrimeiroNome(primeiroNome);
+		pess.setSegundoNome(segundoNome);
+		
+		this.pessoa = pess;
 	}
 
 	public Produto getProduto() {
 		return produto;
 	}
 
-	public void setProduto(Produto produto) {
-		this.produto = produto;
+	public void setProduto(Long id, String produto, Float precoUnitario) {
+		Produto prod = new Produto();
+		prod.setId(id);
+		prod.setProduto(produto);
+		prod.setPrecoUnitario(precoUnitario);
+		
+		this.produto = prod;
 	}
 
 	@Override

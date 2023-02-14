@@ -92,12 +92,20 @@ public class Venda {
 		return pessoa;
 	}
 
-	public void setPessoa(Long id, String primeiroNome, String segundoNome) {
+	public void setPessoa(Long id, String primeiroNome, String segundoNome, String cpf, String email,
+			String complemento, String numero, Long idEndereco, String endereco, String cep, Long idCidade,
+			String cidade, Long idEstado, String estado, Long idBairro, String bairro) {
 		Pessoa pess = new Pessoa();
+
 		pess.setId(id);
 		pess.setPrimeiroNome(primeiroNome);
 		pess.setSegundoNome(segundoNome);
-		
+		pess.setCpf(cpf);
+		pess.setEmail(email);
+		pess.setComplemento(complemento);
+		pess.setNumero(numero);
+		pess.setEndereco(idEndereco, endereco, cep, idCidade, cidade, idEstado, estado, idBairro, bairro);
+
 		this.pessoa = pess;
 	}
 
@@ -105,12 +113,17 @@ public class Venda {
 		return produto;
 	}
 
-	public void setProduto(Long id, String produto, Float precoUnitario) {
+	public void setProduto(Long id, String produto, String descricao, Float precoUnitario, String ncm, Long idUnidade,
+			String unidade, String abreviacao, Long idCategoria, String categoria) {
 		Produto prod = new Produto();
 		prod.setId(id);
 		prod.setProduto(produto);
+		prod.setDescricao(descricao);
 		prod.setPrecoUnitario(precoUnitario);
-		
+		prod.setNcm(ncm);
+		prod.setUnidade(idCategoria, unidade, abreviacao);
+		prod.setCategoria(idCategoria, categoria);
+
 		this.produto = prod;
 	}
 

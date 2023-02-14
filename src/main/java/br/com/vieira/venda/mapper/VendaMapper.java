@@ -20,8 +20,14 @@ public class VendaMapper implements RowMapper<Venda> {
 		venda.setPagamento(rs.getFloat("PAGAMENTO"));
 		venda.setDataPagamento(rs.getDate("DATAPAGAMENTO"));
 		venda.setTroco(rs.getFloat("TROCO"));
-		venda.setPessoa(rs.getLong("IDPESSOA_PK"), rs.getString("PRIMEIRONOME"), rs.getString("SEGUNDONOME"));
-		venda.setProduto(rs.getLong("IDPRODUTO_PK"), rs.getString("PRODUTO"), rs.getFloat("PRECO_UNITARIO"));
+		venda.setPessoa(rs.getLong("IDPESSOA_PK"), rs.getString("PRIMEIRONOME"), rs.getString("SEGUNDONOME"),
+				rs.getString("CPF"), rs.getString("EMAIL"), rs.getString("COMPLEMENTO"), rs.getString("NUMERO"),
+				rs.getLong("IDENDERECO_PK"), rs.getString("ENDERECO"), rs.getString("CEP"), rs.getLong("IDCIDADE_PK"),
+				rs.getString("CIDADE"), rs.getLong("IDESTADO_PK"), rs.getString("ESTADO"), rs.getLong("IDBAIRRO_PK"),
+				rs.getString("BAIRRO"));
+		venda.setProduto(rs.getLong("IDPRODUTO_PK"), rs.getString("PRODUTO"), rs.getString("DESCRICAO"),
+				rs.getFloat("PRECO_UNITARIO"), rs.getString("NCM"), rs.getLong("IDUNIDADE_PK"), rs.getString("UNIDADE"),
+				rs.getString("ABREVIACAO"), rs.getLong("IDCATEGORIA_PK"), rs.getString("CATEGORIA"));
 
 		return venda;
 	}

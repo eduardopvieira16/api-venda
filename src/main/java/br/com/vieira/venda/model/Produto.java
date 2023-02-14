@@ -70,9 +70,10 @@ public class Produto {
 		return unidade;
 	}
 
-	public void setUnidade(Long id, String abreviacao) {
+	public void setUnidade(Long id, String unidade, String abreviacao) {
 		Unidade uni = new Unidade();
 		uni.setId(id);
+		uni.setUnidade(unidade);
 		uni.setAbreviacao(abreviacao);
 
 		this.unidade = uni;

@@ -19,7 +19,7 @@ public class ProdutoMapper implements RowMapper<Produto> {
 		produto.setPrecoUnitario(rs.getFloat("PRECO_UNITARIO"));
 		produto.setNcm(rs.getString("NCM"));
 		produto.setCategoria(rs.getLong("IDCATEGORIA_PK"), rs.getString("CATEGORIA"));
-		produto.setUnidade(rs.getLong("IDCATEGORIA_PK"), rs.getString("ABREVIACAO"));
+		produto.setUnidade(rs.getLong("IDUNIDADE_PK"), rs.getString("UNIDADE"), rs.getString("ABREVIACAO"));
 
 		return produto;
 	}

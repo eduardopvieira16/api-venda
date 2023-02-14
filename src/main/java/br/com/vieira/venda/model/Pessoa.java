@@ -87,8 +87,18 @@ public class Pessoa {
 		return endereco;
 	}
 
-	public void setEndereco(Endereco endereco) {
-		this.endereco = endereco;
+	public void setEndereco(Long id, String endereco, String cep, Long idCidade, String cidade, Long idEstado,
+			String estado, Long idBairro, String bairro) {
+		Endereco end = new Endereco();
+
+		end.setId(id);
+		end.setEndereco(endereco);
+		end.setCep(cep);
+		end.setCidade(idCidade, cidade);
+		end.setEstado(idEstado, estado);
+		end.setBairro(idBairro, bairro);
+
+		this.endereco = end;
 	}
 
 	@Override

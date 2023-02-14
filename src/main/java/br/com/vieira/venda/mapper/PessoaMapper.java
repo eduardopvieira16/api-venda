@@ -20,6 +20,9 @@ public class PessoaMapper implements RowMapper<Pessoa> {
 		pessoa.setEmail(rs.getString("EMAIL"));
 		pessoa.setComplemento(rs.getString("COMPLEMENTO"));
 		pessoa.setNumero(rs.getString("NUMERO"));
+		pessoa.setEndereco(rs.getLong("IDENDERECO_PK"), rs.getString("ENDERECO"), rs.getString("CEP"),
+				rs.getLong("IDCIDADE_PK"), rs.getString("CIDADE"), rs.getLong("IDESTADO_PK"), rs.getString("ESTADO"),
+				rs.getLong("IDBAIRRO_PK"), rs.getString("BAIRRO"));
 
 		return pessoa;
 	}
